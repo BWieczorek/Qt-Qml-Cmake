@@ -3,7 +3,8 @@
 echo "Building Event app!"
 
 
-
+sourcepath="$(pwd)"
+echo $sourcepath
 cd ..
 
 
@@ -14,9 +15,9 @@ mkdir build
 cd build
 
 if [ -z $1 ]; then
-	cmake ../SolarFlightAnalyser -DCMAKE_PREFIX_PATH=/opt/qt5/5.13.0/gcc_64/lib/cmake
+	cmake $sourcepath -DCMAKE_PREFIX_PATH=/opt/qt5/5.13.0/gcc_64/lib/cmake
 else
-	cmake ../SolarFlightAnalyser -DCMAKE_PREFIX_PATH=$1
+	cmake $sourcepath -DCMAKE_PREFIX_PATH=$1
 fi
 
 
